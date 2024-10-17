@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "imessage-github-relay"
-version = "0.1.2"
+version = "0.2.0"
 description = "iMessage send-refresh-recieve messages OS independently through a GitHub Actions Relay."
 requires-python = ">=3.8"
 classifiers = [
@@ -28,10 +28,13 @@ authors = [
 maintainers = [
     {name = "Soumyo Deep Gupta", email = "deep.main.ac@gmail.com"}
 ]
-dependencies = ["toml", "colorama", "requests"]
+dependencies = ["toml", "colorama", "requests", "argpi"]
 
 [tool.setuptools]
-packages = { find = {} }
+packages = { find = { where = ["src"] } }
+
+[project.scripts]
+imessage-github-relay = "imessage_github_relay._callable:call"
 
 [project.urls]
 GitHub = 'https://github.com/d33p0st/iMessage-github-relay'
